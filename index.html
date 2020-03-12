@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--連結到圖庫叫出搜尋的圖案-->
+
+
+    <link rel="stylesheet" type="text/css" href="slick/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/css/slick-theme.css" />
+    <!--slick 卡片輪播-->
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <link rel="icon" href="../img/LOGO-tittle.png" type="image/x-icon" sizes="16x16 32x32 48x48 64x64">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/hambur.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>SHOWBOX</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header">
+                <!--header整個框架-->
+
+                <div class="logo">
+                    <!--LOGO與商標 -->
+                    <a href="index.html"><img src="img/LOGO-2.png" alt=""></a>
+
+                </div>
+                <div class="app-nav">
+                    <button class="hamburger hamburger--spring " type="button" id="btn">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+
+
+                    <nav>
+                        <!--導覽列功能選單-->
+                        <ul class="app-nav_move" id="nav">
+                            <li class="app-navigation"><a href="newfilm.html">最新上線</a></li>
+                            <li class="app-navigation"><a href="type_select.html">精選電影</a></li>
+                            <!-- <li class="app-navigation"><a href="hot-rank.html">熱門排行</a></li> -->
+                            <li class="app-navigation"><a href="myaccount.html">我的帳號</a></li>
+
+                        </ul>
+
+                    </nav>
+                </div>
+
+                <nav class="web-nav">
+                    <!--導覽列功能選單-->
+                    <ul class="web-nav_move">
+                        <li class="navigation"><a href="newfilm.html">最新上線</a></li>
+                        <li class="navigation"><a href="type_select.html">精選電影</a></li>
+                        <!-- <li class="navigation"><a href="hot-rank.html">熱門排行</a></li> -->
+                        <li class="navigation"><a href="myaccount.html">我的帳號</a></li>
+
+                    </ul>
+
+                </nav>
+
+
+                <div class="search_bar">
+
+
+
+                    <div class="box">
+                        <div class="container-2">
+                            <span class="icon"><i class="fa fa-search"></i></span>
+                            <input type="search" id="search" placeholder="輸入電影名稱" />
+                        </div>
+                    </div>
+
+
+
+
+                    <a href="#notice" class="login_size">
+                        <!--登入-->
+                        <img src="img/LOGIN2.png" alt="" class="login">
+                    </a>
+
+
+                    <div class="lightbox-target" id="notice">
+                        <div class="content">
+
+
+
+                            <div class="login_page">
+                                <div id="container1">
+
+                                    <div class="login">
+
+                                        <h3>登入 Login</h3>
+
+                                        <form action="用戶管理.php">
+                                            <input type="text" id="username" name="username" placeholder="帳號" required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="password" name="password" placeholder="密碼" required>
+                                            <div class="tab"></div>
+                                            <input type="submit" value="登入" class="submit" onclick="location.href=''">
+                                        </form>
+
+                                        <h5 onclick="show_hide()">註冊帳號</h5>
+
+                                    </div><!-- login end-->
+                                </div><!-- container1 end-->
+                            </div><!-- login_page end-->
+
+                            <div class="signup_page">
+                                <div id="container2">
+
+                                    <div class="signup">
+
+                                        <h3>註冊 Sign Up</h3>
+
+                                        <form action="用戶管理.php">
+                                            <input type="text" id="fullname" name="fullname" placeholder="使用者全名"
+                                                required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="username2" name="username" placeholder="帳號" required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="password2" name="password" placeholder="密碼" required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="comfirm_password" name="comfirm_password"
+                                                placeholder="確認密碼" required>
+                                            <div class="tab"></div>
+                                            <input type="submit" value="註冊" class="submit">
+                                        </form>
+
+                                        <h5 onclick="show_hide()">登入帳號</h5>
+
+                                    </div><!-- signup end-->
+                                </div><!-- container2 end-->
+                            </div><!-- signup_page end-->
+
+                        </div>
+                        <a href="#" class="lightbox-close"></a>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="bannerinformation">
+                <div class="banner">
+                    <!--banner滿屏影片框架-->
+
+
+                    <video src="./video/thejoker.mp4" loop autoplay muted playsinline></video>
+
+                </div>
+                <div class="movie-wrapper">
+                    <div class="moviename">
+                        <!--banner左邊大框(片名)-->
+                        <img src="img/joker.png" alt="">
+                    </div>
+
+                    <div class="movietxet">
+                        <!--banner左邊大框(簡介)-->
+                        <p>
+                            生活在社會底層的亞瑟佛萊克，演出脫口秀，經歷一次又一次的挫折之後，他一點一點地將內在的自我顯露出來。
+                            從一個失敗的喜劇演員，一步一步成為高譚市最邪惡、最頂尖的超級罪犯。
+                        </p>
+
+                    </div>
+
+
+                    <div class="play_and_introduce">
+                        <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                        <div class="play_button">
+                            <!--播放按鈕-->
+                            <a href="play-page.html">播放</a>
+                        </div>
+
+
+                        <div class="introduce">
+                            <!--簡介按鈕-->
+                            <a href="movie-info.html">更多資訊</a>
+                        </div>
+
+
+                        <div class="addmylist">
+                            <!--加入收藏按鈕-->
+                            <a href="myaccount.html">加入收藏</a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="category">
+                <!-- 最新上線、精選電影、熱門排行-->
+
+
+                <p><span class="gray-line">&#124;</span>最新上線
+                    <a href="newfilm.html">&gt;</a>
+                </p>
+                <div class="container">
+                    <!-- 最新上線-->
+                    <div class="postsize">
+                        <a href="movie-info.html"><img class="inforhover" src="img/bad_boys_for_life_ver2_opt.jpg"
+                                alt=""></a>
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false"
+                            data-aos-delay="1200">
+                            <h1>&#124;</h1>
+                            <h2>絕地戰警3</h2>
+                            <h3>類型：動作、喜劇</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </div>
+                    <div class="postsize"><a href="movie-info.html"><img src="img/birds_of_prey_opt.jpg" alt=""></a>
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false"
+                            data-aos-delay="1400">
+                            <h1>&#124;</h1>
+                            <h2>猛禽小隊：小丑女大解放</h2>
+                            <h3>類型：冒險、犯罪</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </div>
+                    <div class="postsize"><a href="movie-info.html"><img src="img/dolittle_ver8_opt.jpg" alt=""></a>
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false"
+                            data-aos-delay="1600">
+                            <h1>&#124;</h1>
+                            <h2>杜立德</h2>
+                            <h3>類型：奇幻、喜劇</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </div>
+                    <div class="postsize"><a href="movie-info.html"><img src="img/fantasy_island_ver2_opt.jpg"
+                                alt=""></a>
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false"
+                            data-aos-delay="1800">
+                            <h1>&#124;</h1>
+                            <h2>逃出夢幻島</h2>
+                            <h3>類型：恐怖、驚悚</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </div>
+                    <div class="postsize"><a href="movie-info.html"><img src="img/ford_v_ferrari_ver3_opt.jpg"
+                                alt=""></a>
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false"
+                            data-aos-delay="2000">
+                            <h1>&#124;</h1>
+                            <h2>賽道狂人</h2>
+                            <h3>類型：傳記、劇情</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </div>
+                    <div class="postsize"><a href="movie-info.html"><img src="img/good_liar_opt.jpg" alt=""></a>
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false"
+                            data-aos-delay="2200">
+                            <h1>&#124;</h1>
+                            <h2>大說謊家</h2>
+                            <h3>類型：劇情</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </div>
+                    <div class="postsize"><a href="movie-info.html"><img src="img/last_full_measure_ver2_opt.jpg"
+                                alt=""></a>
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false"
+                            data-aos-delay="2400">
+                            <h1>&#124;</h1>
+                            <h2>鋼鐵勳章</h2>
+                            <h3>類型：劇情</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </div>
+                    <div class="postsize"><a href="movie-info.html"><img src="img/no_time_to_die_opt.jpg" alt=""></a>
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false"
+                            data-aos-delay="2600">
+                            <h1>&#124;</h1>
+                            <h2>007 生死交戰</h2>
+                            <h3>類型：動作、冒險</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section>
+
+
+                <div class="section section-news" id="section-news">
+                    <div class="section-title">
+                        <p><span class="gray-line">&#124;</span>精選電影
+                            <a href="type_select.html">&gt;</a>
+                        </p>
+                    </div>
+                    <div class="section-wrapper">
+                        <div class="news-body">
+                            <div class="news-main">
+                                <a class="news-main-card" href="movie-info.html">
+
+                                    <div class="news-main-card-bg" data-aos="fade-right" data-aos-duration="1500"
+                                        data-aos-once="true" data-aos-offset=100 data-aos-delay="200"
+                                        style="background-image: url(img/just_mercy_ver2_xlg.jpg)">
+                                        <div class="news-main-card-bottom">
+                                            <h2 class="h2-text">不完美正義</h2>
+                                            <h3 class="h3-text">類型:劇情</h3>
+                                            <h3 class="h3-text">分級:13＋</h3>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="news-main-card-top">
+                                        <div class="news-play-btn">
+                                            <span class="cui-icon cui-icon-play"></span>
+                                        </div>
+                                    </div>
+
+
+                                </a>
+                            </div>
+                            <div class="news-sub">
+
+                                <div class="news-list-v show">
+
+                                    <div>
+                                        <a href="movie-info.html" class="news-list-card" data-aos="fade-down"
+                                            data-aos-duration="1600" data-aos-once="true" data-aos-offset=100
+                                            data-aos-delay="2100">
+                                            <h3 class="h3">助理</h3>
+                                            <br>
+                                            <p class="p">類型:劇情</p>
+                                            <p class="p">分級:13＋</p>
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a href="movie-info.html" class="news-list-card" data-aos="fade-right"
+                                            data-aos-duration="1600" data-aos-once="true" data-aos-offset=100
+                                            data-aos-delay="1700">
+                                            <h3 class="h3">電流大戰</h3>
+                                            <br>
+                                            <p class="p">類型:劇情、傳記、歷史</p>
+                                            <p class="p">分級:13＋</p>
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a href="movie-info.html" class="news-list-card" data-aos="fade-left"
+                                            data-aos-duration="1600" data-aos-once="true" data-aos-offset=100
+                                            data-aos-delay="1300"
+                                            style="background-image:url(img/trauma_center.jpg);background-size: cover;">
+                                            <h3 class="h3">虎膽殺機</h3>
+                                            <br>
+                                            <p class="p">類型:犯罪、動作</p>
+                                            <p class="p">分級:16＋</p>
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a href="movie-info.html" class="news-list-card" data-aos="fade-up"
+                                            data-aos-duration="1600" data-aos-once="true" data-aos-offset=100
+                                            data-aos-delay="900"
+                                            style="background-image:url(img/nineteen_seventeen_ver3_xxlg.jpg);background-size: cover;"
+                                            ;>
+                                            <h3 class="h3">1917</h3>
+                                            <br>
+                                            <p class="p">類型:戰爭、劇情</p>
+                                            <p class="p">分級:13＋</p>
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a href="movie-info.html" class="news-list-card" data-aos="fade-left"
+                                            data-aos-duration="1600" data-aos-once="true" data-aos-offset=100
+                                            data-aos-delay="500">
+                                            <h3 class="h3">秘密花園</h3>
+                                            <br>
+                                            <p class="p">類型:奇幻、劇情</p>
+                                            <p class="p">分級:13＋</p>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+
+            <section class="rankcontent">
+
+                <p><span class="gray-line">&#124;</span>本週熱門
+                    <!-- <a href="hot-rank.html">&gt;</a> -->
+                </p>
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide">
+                            <a href="movie-info.html"><img src="img/knives_out_ver14_xxlg_opt.jpg" alt=""></a>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <a href="movie-info.html"><img src="img/ready_player_one_ver12_xxlg_opt.jpg" alt=""></a>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                           <a href="movie-info.html"><img src="img/joker_ver5_xxlg.jpg" alt=""></a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="movie-info.html"><img src="img/maleficent_mistress_of_evil_ver7_xxlg_opt.jpg" alt=""></a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="movie-info.html"><img src="img/once_upon_a_time_in_hollywood_ver10_xxlg_opt.jpg" alt=""></a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <article class="commend">
+                <div class="commend_tittle">
+
+                    <p><span class="gray-line">&#124;</span>本週嚴選<a href=""></a></p>
+                </div>
+                <!--本週嚴選-->
+                <div class="commend_content">
+                    <div class="commend_post" data-aos="fade-right" data-aos-duration="1500" data-aos-once="true"
+                        data-aos-offset=150>
+                        <a href="movie-info.html"><img src="img/maxresdefault_opt.jpg" alt=""></a>
+                    </div>
+
+                    <div class="commend_right" data-aos="fade-down" data-aos-duration="1500" data-aos-offset="50"
+                        data-aos-once="true" data-aos-delay="1000">
+
+
+
+                        <div class="commend_introduce">
+                            <h1>死亡藍調</h1><br>
+                            <h1>年份</h1>
+                            <h2>2019</h2>
+                            <h1>片長</h1>
+                            <h2>85分</h2>
+                            <h1>劇情簡介:</h1>
+                            <p>隨著主角傑克直視從何而來、往何處去，我究竟是誰？有精神疾病的傑克返回泰國找尋創傷而失落的過去。</p>
+                        </div>
+
+
+
+                        <div class="play_and_introduce_2">
+
+                            <div class="p_btns play_button_2">
+                                <!--播放按鈕-->
+                                <a href="play-page.html">播放</a>
+                            </div>
+
+
+                            <div class="p_btns introduce_2">
+                                <!--簡介按鈕-->
+                                <a href="movie-info.html">更多資訊</a>
+                            </div>
+
+
+                            <div class="p_btns addmylist_2">
+                                <!--加入收藏按鈕-->
+                                <a href="myaccount.html">加入收藏</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </article>
+        </main>
+
+
+        <footer class="secondaryinfor">
+
+            <div class="upper-infor">
+                <div class="showbox_logo">
+                    <!--頁尾資訊-->
+                    <a href="index.html"><img src="img/showbox1.png" alt=""></a>
+                </div>
+
+                <div class="copyright">
+                    <p>©2019-2020 copyright All Rights Reserved</p>
+                </div>
+
+                <div class="connect_socialmedia">
+                    <a href=""><img src="img/youtube.png" alt=""></a>
+                    <a href=""><img src="img/twitter.png" alt=""></a>
+                    <a href=""><img src="img/fb.png" alt=""></a>
+                    <a href=""><img src="img/ig.png" alt=""></a>
+                </div>
+            </div>
+
+        </footer>
+
+
+        <script src="slick/js/jquery-3.1.1.min.js"></script>
+        <script src="slick/js/slick.js"></script>
+        <script>
+
+            $('.container,.hotrank,.feature_movie').slick({
+                slidesToShow: 6,
+                slidesToScroll: 4,
+                speed: 1500,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                infinite: true,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            infinite: true,
+                            arrows: true,
+                            centerPadding: '40px',
+                            slidesToShow: 6,
+                            slidesToScroll: 4,
+                        }
+                    },
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            infinite: true,
+                            arrows: true,
+                            centerPadding: '90px',
+                            slidesToShow: 5,
+                            slidesToScroll: 4,
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            infinite: true,
+                            arrows: true,
+                            centerPadding: '90px',
+                            slidesToShow: 5,
+                            slidesToScroll: 4,
+                        }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            infinite: true,
+                            arrows: true,
+                            centerPadding: '20px',
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        }
+                    }
+                ]
+            });
+
+
+        </script>
+
+        <script>
+
+            function show_hide() {
+                var login = document.getElementById("container1");
+                var signup = document.getElementById("container2");
+                var copyright = document.getElementById("copyright");
+
+                if (login.style.display === "none") {
+                    login.style.display = "block";  //lonin出現
+                    document.getElementById("username").value = "";
+                    document.getElementById("password").value = "";
+                    signup.style.display = "none";  //signup消失
+                    copyright.style.margin = "200px 0px 0px 0px";
+                } else {
+                    login.style.display = "none";   //login消失
+                    signup.style.display = "block"; //signup出現
+                    signup.style.visibility = "visible";
+                    copyright.style.margin = "200px 0px 0px 0px";
+
+                    document.getElementById("fullname").value = "";
+                    document.getElementById("username2").value = "";
+                    document.getElementById("password2").value = "";
+                    document.getElementById("comfirm_password").value = "";
+                }
+            }
+        </script>
+
+
+        <Script>
+            $(function () {
+
+                // hamburger icon 的切換
+                $("button.hamburger").on("click", function () {
+                    $(this).toggleClass("is-active");
+                });
+
+            });
+        </Script>
+
+
+
+        <script>
+            function btn() {
+                var btn = document.getElementById("btn");
+                var nav = document.getElementById("nav")
+                if (btn.classList.contains("is-active")) {
+                    nav.style.display = "block";
+                    TweenMax.staggerTo('.app-navigation', 0.5, { x: 0, opacity: 1, ease: Sine.easeOut, }, 0.2)
+
+                }
+                else {
+                    TweenMax.staggerTo('.app-navigation', 0.5, { x: 0, opacity: 0, ease: Sine.easeOut, }, 0.2)
+                    setTimeout(function () {
+                        nav.style.display = "none";
+                    }, 500)
+                }
+
+            }
+
+
+
+            function init() {
+                document.getElementById("btn").onclick = btn;
+            }
+
+            window.onload = init;
+        </script>
+
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+
+            $(function () {
+                AOS.init();
+            })
+
+        </script>
+
+
+
+        <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+        <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+        <script src="js/swiper.min.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                loop: true,
+                autoplay: true,
+                speed: 4000,
+                autoResize: true,
+                mousewheelControl: true,
+                autoHeight: true,
+                effect:"coverflow"
+            });
+        </script>
+    </div>
+</body>
+
+</html>

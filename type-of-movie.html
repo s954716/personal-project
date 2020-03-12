@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/style5.css" /> -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet'
+        type='text/css' />
+
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--連結到圖庫叫出搜尋的圖案-->
+
+    <link rel="icon" href="img/LOGO-tittle.png" type="image/x-icon" sizes="16x16 32x32 48x48 64x64">
+
+    <link rel="stylesheet" href="css/type-of-movie.css">
+    <title>SHOWBOX</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header">
+                <!--header整個框架-->
+
+                <div class="logo">
+                    <!--LOGO與商標 -->
+                    <a href="index.html"><img src="img/LOGO-2.png" alt=""></a>
+
+                </div>
+
+
+
+                <nav>
+                    <!--導覽列功能選單-->
+                    <ul class="nav_move">
+                        <li class="navigation"><a href="newfilm.html">最新上線</a></li>
+                        <li class="navigation"><a href="type_select.html">精選電影</a></li>
+                        <!-- <li class="navigation"><a href="hot-rank.html">熱門排行</a></li> -->
+                        <li class="navigation"><a href="myaccount.html">我的帳號</a></li>
+
+                    </ul>
+
+                </nav>
+
+
+                <div class="search_bar">
+
+
+
+                    <div class="box">
+                        <div class="container-2">
+                            <span class="icon"><i class="fa fa-search"></i></span>
+                            <input type="search" id="search" placeholder="輸入電影名稱" />
+                        </div>
+                    </div>
+
+
+
+
+                    <a href="#notice" class="login_size">
+                        <!--登入-->
+                        <img src="img/LOGIN2.png" alt="" class="login">
+                    </a>
+
+
+                    <div class="lightbox-target" id="notice">
+                        <div class="content">
+
+
+
+                            <div class="login_page">
+                                <div id="container1">
+
+                                    <div class="login">
+
+                                        <h3>登入 Login</h3>
+
+                                        <form action="用戶管理.php">
+                                            <input type="text" id="username" name="username" placeholder="帳號" required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="password" name="password" placeholder="密碼" required>
+                                            <div class="tab"></div>
+                                            <input type="submit" value="登入" class="submit" onclick="location.href=''">
+                                        </form>
+
+                                        <h5 onclick="show_hide()">註冊帳號</h5>
+
+                                    </div><!-- login end-->
+                                </div><!-- container1 end-->
+                            </div><!-- login_page end-->
+
+                            <div class="signup_page">
+                                <div id="container2">
+
+                                    <div class="signup">
+
+                                        <h3>註冊 Sign Up</h3>
+
+                                        <form action="用戶管理.php">
+                                            <input type="text" id="fullname" name="fullname" placeholder="使用者全名"
+                                                required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="username2" name="username" placeholder="帳號" required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="password2" name="password" placeholder="密碼" required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="comfirm_password" name="comfirm_password"
+                                                placeholder="確認密碼" required>
+                                            <div class="tab"></div>
+                                            <input type="submit" value="註冊" class="submit">
+                                        </form>
+
+                                        <h5 onclick="show_hide()">登入帳號</h5>
+
+                                    </div><!-- signup end-->
+                                </div><!-- container2 end-->
+                            </div><!-- signup_page end-->
+
+                        </div>
+                        <a href="#" class="lightbox-close"></a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <article>
+                <p class="type-title">動作片</p>
+
+
+                <div class="container">
+                    <!-- Codrops top bar -->
+                    <p class="top-commened">為您推薦</p>
+
+                    <div id="grid" class="main">
+                        <div class="view">
+                            <div class="view-back">
+
+                                <div class="movie-text">
+                                    <h2>神力女超人1984</h2>
+                                    <p>1980年代美國與蘇聯互相對抗的冷戰時期，「神力女超人」黛安娜·普林斯在此對上了一名力量強大的神祕對手。</p>
+                                </div>
+
+                                <div class="play_and_introduce">
+
+                                    <div class="play_button">
+                                        <!--播放按鈕-->
+                                        <a href="play-page.html">播放</a>
+                                    </div>
+
+
+                                    <div class="introduce">
+                                        <!--簡介按鈕-->
+                                        <a href="movie-info.html">更多資訊</a>
+                                    </div>
+
+
+                                    <div class="addmylist">
+                                        <!--加入收藏按鈕-->
+                                        <a href="myaccount.html">加入收藏</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <img src="img/wonder_woman_nineteen_eighty_four_xlg_opt.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <section>
+                <ul class="filter">
+                    <li class="filter-type">上映時間</li>
+                    <li class="filter-text">全部</li>
+                    <li class="filter-text">2020</li>
+                    <li class="filter-text">2019</li>
+                    <li class="filter-text">2018</li>
+                    <li class="filter-text">2017</li>
+                    <li class="filter-text">2016</li>
+                    <li class="filter-text">2015</li>
+                    <li class="filter-text">2014</li>
+                    <li class="filter-text">2013</li>
+                    <li class="filter-text">更早</li>
+                </ul>
+
+
+
+                <ul class="filter-2">
+                    <li class="filter-type">排序</li>
+                    <li class="filter-text-2">按週人氣</li>
+                    <li class="filter-text-2">按月人氣</li>
+                </ul>
+
+
+
+                <ul class="filter-2">
+                    <li class="filter-type">熱門標籤</li>
+                    <li class="filter-text-2">鋒迴路轉</li>
+                    <li class="filter-text-2">暴走曼哈頓</li>
+                    <li class="filter-text-2">賽道狂人</li>
+                    <li class="filter-text-2">驅魔直播</li>
+                </ul>
+
+
+                <ul class="filter-2">
+                    <li class="filter-type">類型</li>
+                    <li class="filter-text-2">動作片</li>
+                    <li class="filter-text-2">科幻片</li>
+                    <li class="filter-text-2">愛情片</li>
+                    <li class="filter-text-2">喜劇片</li>
+                    <li class="filter-text-2">劇情片</li>
+                    <li class="filter-text-2">驚悚片</li>
+                    <li class="filter-text-2">紀錄片</li>
+                    <li class="filter-text-2">戰爭片</li>
+                    <li class="filter-text-2">動畫片</li>
+                </ul>
+
+
+            </section>
+
+            <section>
+                <p class="type-search">搜尋結果</p>
+
+                <div class="search_content">
+                    <div><a href="movie-info.html"><img src="img/green_book_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/deadpool_two_ver13_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/aquaman_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/mission_impossible__fallout_ver16_opt.jpg" alt=""></a>
+                    </div>
+                    <div><a href="movie-info.html"><img src="img/jurassic_world_fallen_kingdom_ver4_opt.jpg" alt=""></a>
+                    </div>
+                    <div><a href="movie-info.html"><img src="img/skyscraper_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/oceans_eight_ver2_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/legion_ver3_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/hereditary_ver2_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/creed_ii_ver3_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/meg_ver6_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/robin_hood_ver11_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/nun_ver3_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/red_sparrow_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/hurricane_heist_ver5_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/rampage_ver3_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/annihilation_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img
+                                src="img/fantastic_beasts_the_crimes_of_grindelwald_ver14_opt.jpg" alt=""></a>
+                    </div>
+                    <div><a href="movie-info.html"><img src="img/catcher_was_a_spy_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/acts_of_violence_ver2_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/quiet_place_ver3_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/nutcracker_and_the_four_realms_ver20_opt.jpg"
+                                alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/darkest_minds_ver3_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/nightmare_gallery_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/i_can_only_imagine_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/twelve_strong_ver5_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/geostorm_ver2_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/aftermath_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/tag_ver3_opt.jpg" alt=""></a></div>
+                    <div><a href="movie-info.html"><img src="img/rough_night_ver13_opt.jpg" alt=""></a></div>
+                    <div class="overflows"></div>
+
+                </div>
+            </section>
+
+            <div class="pagination-border">
+                <ul class="pagination">
+                    <li><a href="#">«</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a class="active" href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
+            </div>
+
+
+        </main>
+        <footer class="secondaryinfor">
+            <div class="showbox_logo">
+                <!--頁尾資訊-->
+                <a href="index.html"><img src="img/showbox1.png" alt=""></a>
+                <br>
+                <br>
+                <br>
+                <p>
+                    聯絡我們<br>
+                    E-mail:showbox@gmail.com <br>
+                    TEL:0912-345-678<br>
+                </p>
+            </div>
+
+
+
+
+            <div class="copyright">
+                <p>©2019-2020 copyright All Rights Reserved</p>
+            </div>
+            <div class="connect_socialmedia">
+                <a href=""><img src="img/youtube.png" alt=""></a>
+                <a href=""><img src="img/twitter.png" alt=""></a>
+                <a href=""><img src="img/fb.png" alt=""></a>
+                <a href=""><img src="img/ig.png" alt=""></a>
+            </div>
+        </footer>
+
+
+
+
+        <script type="text/javascript" src="js/modernizr.custom.69142.js"></script>
+        <script type="text/javascript">
+
+            Modernizr.load({
+                test: Modernizr.csstransforms3d && Modernizr.csstransitions,
+                yep: ['http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', 'js/jquery.hoverfold.js'],
+                nope: 'css/fallback.css',
+                callback: function (url, result, key) {
+
+                    if (url === 'js/jquery.hoverfold.js') {
+                        $('#grid').hoverfold();
+                    }
+
+                }
+            });
+
+        </script>
+
+
+
+        <script>
+
+            function show_hide() {
+                var login = document.getElementById("container1");
+                var signup = document.getElementById("container2");
+                var copyright = document.getElementById("copyright");
+
+                if (login.style.display === "none") {
+                    login.style.display = "block";  //lonin出現
+                    document.getElementById("username").value = "";
+                    document.getElementById("password").value = "";
+                    signup.style.display = "none";  //signup消失
+                    copyright.style.margin = "200px 0px 0px 0px";
+                } else {
+                    login.style.display = "none";   //login消失
+                    signup.style.display = "block"; //signup出現
+                    signup.style.visibility = "visible";
+                    copyright.style.margin = "200px 0px 0px 0px";
+
+                    document.getElementById("fullname").value = "";
+                    document.getElementById("username2").value = "";
+                    document.getElementById("password2").value = "";
+                    document.getElementById("comfirm_password").value = "";
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

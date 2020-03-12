@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/hambur.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/hot-rank.css">
+  <link rel="icon" href="img/LOGO-tittle.png" type="image/x-icon" sizes="16x16 32x32 48x48 64x64">
+  <title>SHOWBOX</title>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <header>
+      <div class="header">
+        <!--header整個框架-->
+
+        <div class="logo">
+          <!--LOGO與商標 -->
+          <a href="index.html"><img src="img/LOGO-2.png" alt=""></a>
+
+        </div>
+        <div class="app-nav">
+          <button class="hamburger hamburger--spring " type="button" id="btn">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+
+
+          <nav>
+            <!--導覽列功能選單-->
+            <ul class="app-nav_move" id="nav">
+              <li class="app-navigation"><a href="newfilm.html">最新上線</a></li>
+              <li class="app-navigation"><a href="type_select.html">精選電影</a></li>
+              <li class="app-navigation"><a href="hot-rank.html">熱門排行</a></li>
+              <li class="app-navigation"><a href="myaccount.html">我的帳號</a></li>
+
+            </ul>
+
+          </nav>
+        </div>
+
+        <nav class="web-nav">
+          <!--導覽列功能選單-->
+          <ul class="web-nav_move">
+            <li class="navigation"><a href="newfilm.html">最新上線</a></li>
+            <li class="navigation"><a href="type_select.html">精選電影</a></li>
+            <li class="navigation"><a href="hot-rank.html">熱門排行</a></li>
+            <li class="navigation"><a href="myaccount.html">我的帳號</a></li>
+
+          </ul>
+
+        </nav>
+
+
+        <div class="search_bar">
+
+
+
+          <div class="box">
+            <div class="container-2">
+              <span class="icon"><i class="fa fa-search"></i></span>
+              <input type="search" id="search" placeholder="輸入電影名稱" />
+            </div>
+          </div>
+
+
+
+
+          <a href="#notice" class="login_size">
+            <!--登入-->
+            <img src="img/LOGIN2.png" alt="" class="login">
+          </a>
+
+
+          <div class="lightbox-target" id="notice">
+            <div class="content">
+
+
+
+              <div class="login_page">
+                <div id="container1">
+
+                  <div class="login">
+
+                    <h3>登入 Login</h3>
+
+                    <form action="用戶管理.php">
+                      <input type="text" id="username" name="username" placeholder="帳號" required>
+                      <div class="tab"></div>
+                      <input type="text" id="password" name="password" placeholder="密碼" required>
+                      <div class="tab"></div>
+                      <input type="submit" value="登入" class="submit" onclick="location.href=''">
+                    </form>
+
+                    <h5 onclick="show_hide()">註冊帳號</h5>
+
+                  </div><!-- login end-->
+                </div><!-- container1 end-->
+              </div><!-- login_page end-->
+
+              <div class="signup_page">
+                <div id="container2">
+
+                  <div class="signup">
+
+                    <h3>註冊 Sign Up</h3>
+
+                    <form action="用戶管理.php">
+                      <input type="text" id="fullname" name="fullname" placeholder="使用者全名" required>
+                      <div class="tab"></div>
+                      <input type="text" id="username2" name="username" placeholder="帳號" required>
+                      <div class="tab"></div>
+                      <input type="text" id="password2" name="password" placeholder="密碼" required>
+                      <div class="tab"></div>
+                      <input type="text" id="comfirm_password" name="comfirm_password" placeholder="確認密碼" required>
+                      <div class="tab"></div>
+                      <input type="submit" value="註冊" class="submit">
+                    </form>
+
+                    <h5 onclick="show_hide()">登入帳號</h5>
+
+                  </div><!-- signup end-->
+                </div><!-- container2 end-->
+              </div><!-- signup_page end-->
+
+            </div>
+            <a href="#" class="lightbox-close"></a>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <div class="tab-container">
+
+
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#home">熱門排行</a></li>
+          <li><a data-toggle="tab" href="#menu1">本週排行</a></li>
+          <li><a data-toggle="tab" href="#menu2">本月排行</a></li>
+          <li><a data-toggle="tab" href="#menu3">本年排行</a></li>
+        </ul>
+
+        <div class="tab-content">
+
+          <div id="home" class="tab-pane fade in active">
+            <div class="container centered-wrap">
+              <h3>TOP1</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/little_women_ver10_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>她們</h2><br><br><br>
+                    <p>劇情簡介:<br><br>
+                      透過葛莉塔潔薇的視角，重新詮釋馬區家族中，這四位個性截然不同的姊妹；她們將透過自己的信念與理想，活出橫跨時空且不受時代背景限制的生活。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <h3>TOP2</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/jumanji_the_next_level_ver3_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>野蠻遊戲：全面晉級</h2><br>
+                    <p>劇情簡介:<br><br>
+                      四位主角重返「野蠻遊戲」試圖要拯救自己的小命時，他們意外發現這個遊戲規則不僅改變，這一次，所有的玩家都必須去突破更多未探索過的全新領域</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP3</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/ghostbusters_afterlife_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>魔鬼剋星</h2><br><br><br>
+                    <p>劇情簡介:<br><br>
+                      三位以科學技術研究鬼怪的大學教授，因久未有研究成果，被學校開除而失業，他們以自己的本領成立以科學儀器進行捉鬼的公司，為市民們提供捉鬼的服務。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP4</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/doctor_sleep_ver2_xlg_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>安眠醫生</h2><br>
+                    <p>劇情簡介:<br><br>
+                      全景酒店事件後35年，丹尼成為一個四十歲的大男人，成為了一個酗酒者，連人生中最敬愛的迪克逝世了都不知道。
+                      不過經歷了匿名戒酒會長時間的幫助，丹尼已經重新做人，並利用其閃靈的能力，協助臨死的長者善終。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP5</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/free_guy_xlg_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>分身人</h2><br><br><br>
+                    <p>劇情簡介:<br><br>
+                      一個殘酷的遊戲開放世界，一位背景角色驚覺他是唯一能拯救他所處世界的人。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+
+
+          <div id="menu1" class="tab-pane fade">
+            <div class="container centered-wrap">
+              <h3>TOP1</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/little_women_ver10_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>她們</h2><br><br><br>
+                    <p>劇情簡介:<br><br>
+                      透過葛莉塔潔薇的視角，重新詮釋馬區家族中，這四位個性截然不同的姊妹；她們將透過自己的信念與理想，活出橫跨時空且不受時代背景限制的生活。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <h3>TOP2</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/jumanji_the_next_level_ver3_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>野蠻遊戲：全面晉級</h2><br>
+                    <p>劇情簡介:<br><br>
+                      四位主角重返「野蠻遊戲」試圖要拯救自己的小命時，他們意外發現這個遊戲規則不僅改變，這一次，所有的玩家都必須去突破更多未探索過的全新領域</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP3</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/ghostbusters_afterlife_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>魔鬼剋星</h2><br><br><br>
+                    <p>劇情簡介:<br><br>
+                      三位以科學技術研究鬼怪的大學教授，因久未有研究成果，被學校開除而失業，他們以自己的本領成立以科學儀器進行捉鬼的公司，為市民們提供捉鬼的服務。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP4</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/doctor_sleep_ver2_xlg_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>安眠醫生</h2><br>
+                    <p>劇情簡介:<br><br>
+                      全景酒店事件後35年，丹尼成為一個四十歲的大男人，成為了一個酗酒者，連人生中最敬愛的迪克逝世了都不知道。
+                      不過經歷了匿名戒酒會長時間的幫助，丹尼已經重新做人，並利用其閃靈的能力，協助臨死的長者善終。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP5</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/free_guy_xlg_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>分身人</h2><br><br><br>
+                    <p>劇情簡介:<br><br>
+                      一個殘酷的遊戲開放世界，一位背景角色驚覺他是唯一能拯救他所處世界的人。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+
+          </div>
+
+          <div id="menu2" class="tab-pane fade">
+            <div class="container centered-wrap">
+              <h3>TOP1</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/kill_team_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>殺戮部隊</h2><br><br>
+                    <p>劇情簡介:<br>
+                      美國入侵阿富汗期間，年輕士兵Adam目睹其他新兵殺害無辜平民，考慮將他們報告給上級。而全副武裝的小隊越來越暴力，也開始懷疑隊中有人是叛徒。斯卡斯加德飾演的中士強迫Adam殺死平民，不然就殺死他。
+                    </p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <h3>TOP2</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/ad_astra_ver3_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>星際救援</h2><br>
+                    <p>劇情簡介:<br><br>
+                      一名航太工程師，為了尋找20年前啟程外太空尋找外星智慧生物，失蹤在茫茫宇宙的父親，他不惜跨越宇宙星系間，只為了尋找父親可能仍生還的下落。然而，卻在旅途中發現了對地球造成極度威脅的秘密..</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP3</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/spiderman_far_from_home_ver4_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>蜘蛛人：離家日</h2><br><br><br>
+                    <p>劇情簡介:<br><br>
+                      彼得帕克與朋友一同參與暑假期間的歐洲兩星期海外旅遊，不過尼克福瑞卻出現在彼得帕克的飯店，彼得帕克得保護他的好友們免受神秘客的攻擊。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP4</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/twenty_one_bridges_ver2_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>暴走曼哈頓</h2><br>
+                    <p>劇情簡介:<br><br>
+                      警探安德烈的父親從警時因公慘遭殺害，因此他誓言將所有殺警凶手繩之以法。為了偵破一樁8名警察慘遭奪命的駭人搶劫案，他必須在時限內抓到凶手，於是不擇手段展開緝凶行動。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP5</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/official_secrets_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>瞞天機密</h2><br>
+                    <p>劇情簡介:<br>
+                      在英國情報機構任職的中文翻譯員凱薩琳，某天收到一封電子郵件。內容顯示美國國安局，為了讓聯合國安理會同意發動伊拉克戰爭，串通英國政府執行非法行動，企圖改變聯合國的表決結果。在安於現狀與揭發真相的天人交戰之中，她選擇阻止這場不義之戰。
+                    </p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div id="menu3" class="tab-pane fade">
+
+            <div class="container centered-wrap">
+              <h3>TOP1</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/little_monsters_ver4_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>校外打怪教學</h2><br><br><br>
+                    <p>劇情簡介:<br><br>
+                      失戀歌手戴夫對外甥的幼稚園老師卡洛琳一見鍾情，自願參加校外教學。原本單純美好的旅行，不但殺出暗黑兒童台明星泰迪攪局，附近軍事基地的殭屍暴走入侵。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <h3>TOP2</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/maleficent_mistress_of_evil_ver15_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>黑魔女2</h2><br>
+                    <p>劇情簡介:<br><br>
+                      對人還是存有戒心，黑魔女梅菲瑟一心想保護奧蘿拉公主，卻適得其反。當菲力浦王子鼓起勇氣在大日子和魔域女王的奧蘿拉求婚，兩人的心意卻引起王國背後有心人的操弄。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP3</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/irishman_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>愛爾蘭人</h2><br><br><br>
+                    <p>劇情簡介:<br><br>
+                      貨車司機法蘭克·「愛爾蘭人」希蘭變成一名殺手，並與黑幫羅素·布法利諾和他的布法利諾犯罪家族有關連，包括為有勢力的國際貨車司機兄弟會主席吉米·霍法工作。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP4</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/ride_like_a_girl_opt (1).jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>奔跑吧女孩</h2><br>
+                    <p>劇情簡介:<br><br>
+                      2015墨爾本杯馬賽，女騎手米雪兒佩恩出乎所有人預料，拿下墨爾本杯馬賽冠軍。這部電影是她的傳記，敘述她勇於作夢並夢想成真的一刻。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3>TOP5</h3>
+              <div class="hover-box">
+                <div class="photo">
+                  <img src="img/gemini_man_ver7_opt.jpg">
+                </div>
+
+                <div class="info-box">
+                  <div class="info-content">
+                    <h2>雙子殺手</h2><br><br><br>
+                    <p>劇情簡介:<br><br>
+                      一位已經有中年歲數的殺手，被指派暗殺任務，卻查覺他暗殺的對象正是年輕了25歲、能力處於最更高峰時期的自己。</p>
+
+                    <div class="play_and_introduce">
+                      <!--banner左邊大框(播放、更多資訊、加入收藏)-->
+                      <div class="play_button">
+                        <!--播放按鈕-->
+                        <a href="play-page.html">播放</a>
+                      </div>
+
+
+                      <div class="addmylist">
+                        <!--加入收藏按鈕-->
+                        <a href="myaccount.html">加入收藏</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+
+    <footer class="secondaryinfor">
+
+      <div class="upper-infor">
+        <div class="showbox_logo">
+          <!--頁尾資訊-->
+          <a href="index.html"><img src="img/showbox1.png" alt=""></a>
+        </div>
+
+        <div class="copyright">
+          <h1>©2019-2020 copyright All Rights Reserved</h1>
+        </div>
+
+        <div class="connect_socialmedia">
+          <a href=""><img src="img/youtube.png" alt=""></a>
+          <a href=""><img src="img/twitter.png" alt=""></a>
+          <a href=""><img src="img/fb.png" alt=""></a>
+          <a href=""><img src="img/ig.png" alt=""></a>
+        </div>
+      </div>
+
+    </footer>
+
+
+
+
+
+    <script>
+
+      function show_hide() {
+        var login = document.getElementById("container1");
+        var signup = document.getElementById("container2");
+        var copyright = document.getElementById("copyright");
+
+        if (login.style.display === "none") {
+          login.style.display = "block";  //lonin出現
+          document.getElementById("username").value = "";
+          document.getElementById("password").value = "";
+          signup.style.display = "none";  //signup消失
+          copyright.style.margin = "200px 0px 0px 0px";
+        } else {
+          login.style.display = "none";   //login消失
+          signup.style.display = "block"; //signup出現
+          signup.style.visibility = "visible";
+          copyright.style.margin = "200px 0px 0px 0px";
+
+          document.getElementById("fullname").value = "";
+          document.getElementById("username2").value = "";
+          document.getElementById("password2").value = "";
+          document.getElementById("comfirm_password").value = "";
+        }
+      }
+    </script>
+
+
+    <Script>    // hamburger icon 的切換
+      $(function () {
+
+
+        $("button.hamburger").on("click", function () {
+          $(this).toggleClass("is-active");
+        });
+
+      });
+    </Script>
+
+
+
+    <script> //APP下拉選單
+      function btn() {
+        var btn = document.getElementById("btn");
+        var nav = document.getElementById("nav")
+        if (btn.classList.contains("is-active")) {
+          nav.style.display = "block";
+          TweenMax.staggerTo('.app-navigation', 0.5, { x: 0, opacity: 1, ease: Sine.easeOut, }, 0.2)
+
+        }
+        else {
+          TweenMax.staggerTo('.app-navigation', 0.5, { x: 0, opacity: 0, ease: Sine.easeOut, }, 0.2)
+          setTimeout(function () {
+            nav.style.display = "none";
+          }, 500)
+        }
+
+      }
+
+
+
+      function init() {
+        document.getElementById("btn").onclick = btn;
+      }
+
+      window.onload = init;
+    </script>
+
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="slider-pro-master/dist/css/slider-pro.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="slider-pro-master/examples/css/examples.css" media="screen" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <link rel="stylesheet" href="css/hambur.css">
+    <link rel="stylesheet" href="css/type_select.css">
+    <link rel="icon" href="img/LOGO-tittle.png" type="image/x-icon" sizes="16x16 32x32 48x48 64x64">
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <title>SHOWBOX</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header">
+                <!--header整個框架-->
+
+                <div class="logo">
+                    <!--LOGO與商標 -->
+                    <a href="index.html"><img src="img/LOGO-2.png" alt=""></a>
+
+                </div>
+                <div class="app-nav">
+                    <button class="hamburger hamburger--spring " type="button" id="btn">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+
+
+                    <nav>
+                        <!--導覽列功能選單-->
+                        <ul class="app-nav_move" id="nav">
+                            <li class="app-navigation"><a href="newfilm.html">最新上線</a></li>
+                            <li class="app-navigation"><a href="type_select.html">精選電影</a></li>
+                            <!-- <li class="app-navigation"><a href="hot-rank.html">熱門排行</a></li> -->
+                            <li class="app-navigation"><a href="myaccount.html">我的帳號</a></li>
+
+                        </ul>
+
+                    </nav>
+                </div>
+
+                <nav class="web-nav">
+                    <!--導覽列功能選單-->
+                    <ul class="web-nav_move">
+                        <li class="navigation"><a href="newfilm.html">最新上線</a></li>
+                        <li class="navigation"><a href="type_select.html">精選電影</a></li>
+                        <!-- <li class="navigation"><a href="hot-rank.html">熱門排行</a></li> -->
+                        <li class="navigation"><a href="myaccount.html">我的帳號</a></li>
+
+                    </ul>
+
+                </nav>
+
+
+                <div class="search_bar">
+
+
+
+                    <div class="box">
+                        <div class="container-2">
+                            <span class="icon"><i class="fa fa-search"></i></span>
+                            <input type="search" id="search" placeholder="輸入電影名稱" />
+                        </div>
+                    </div>
+
+
+
+
+                    <a href="#notice" class="login_size">
+                        <!--登入-->
+                        <img src="img/LOGIN2.png" alt="" class="login">
+                    </a>
+
+
+                    <div class="lightbox-target" id="notice">
+                        <div class="content">
+
+
+
+                            <div class="login_page">
+                                <div id="container1">
+
+                                    <div class="login">
+
+                                        <h3>登入 Login</h3>
+
+                                        <form action="用戶管理.php">
+                                            <input type="text" id="username" name="username" placeholder="帳號" required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="password" name="password" placeholder="密碼" required>
+                                            <div class="tab"></div>
+                                            <input type="submit" value="登入" class="submit" onclick="location.href=''">
+                                        </form>
+
+                                        <h5 onclick="show_hide()">註冊帳號</h5>
+
+                                    </div><!-- login end-->
+                                </div><!-- container1 end-->
+                            </div><!-- login_page end-->
+
+                            <div class="signup_page">
+                                <div id="container2">
+
+                                    <div class="signup">
+
+                                        <h3>註冊 Sign Up</h3>
+
+                                        <form action="用戶管理.php">
+                                            <input type="text" id="fullname" name="fullname" placeholder="使用者全名"
+                                                required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="username2" name="username" placeholder="帳號" required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="password2" name="password" placeholder="密碼" required>
+                                            <div class="tab"></div>
+                                            <input type="text" id="comfirm_password" name="comfirm_password"
+                                                placeholder="確認密碼" required>
+                                            <div class="tab"></div>
+                                            <input type="submit" value="註冊" class="submit">
+                                        </form>
+
+                                        <h5 onclick="show_hide()">登入帳號</h5>
+
+                                    </div><!-- signup end-->
+                                </div><!-- container2 end-->
+                            </div><!-- signup_page end-->
+
+                        </div>
+                        <a href="#" class="lightbox-close"></a>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </header>
+
+
+
+
+        <main>
+
+            <section class="banner-movie">
+                <p><span class="gray-line">&#124;</span>精選推薦
+                </p>
+                <div id="example3" class="slider-pro">
+                    <div class="sp-slides">
+                        <div class="sp-slide">
+                            <a href="movie-info.html">
+                                <img class="sp-image" src="img/foxcatcher_ver9_xxlg.jpg">
+                            </a>
+                        </div>
+
+                        <div class="sp-slide">
+                            <a href="movie-info.html">
+                                <img class="sp-image" src="img/spectre_ver6_xxlg.jpg">
+                            </a>
+
+                        </div>
+
+                        <div class="sp-slide">
+                            <a href="movie-info.html">
+                                <img class="sp-image" src="img/pan_ver7_xxlg.jpg">
+                            </a>
+                        </div>
+
+                        <div class="sp-slide">
+                            <a href="movie-info.html">
+                                <img class="sp-image" src="img/hunger_games_mockingjay__part_two_ver19_xxlg.jpg">
+                            </a>
+                        </div>
+
+                        <div class="sp-slide">
+                            <a href="movie-info.html">
+                                <img class="sp-image" src="img/manglehorn_ver4_xxlg.jpg">
+                            </a>
+
+                        </div>
+
+                        <div class="sp-slide">
+                            <a href="movie-info.html">
+                                <img class="sp-image" src="img/we_are_your_friends_ver3_xxlg.jpg">
+                            </a>
+
+                        </div>
+
+                        <div class="sp-slide">
+                            <a href="movie-info.html">
+                                <img class="sp-image" src="img/foxcatcher_ver9_xxlg.jpg">
+                            </a>
+
+                        </div>
+
+                        <div class="sp-slide">
+                            <a href="movie-info.html">
+                                <img class="sp-image" src="img/spectre_ver6_xxlg.jpg">
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="sp-thumbnails">
+                        <img class="sp-thumbnail" src="img/foxcatcher_ver9_xxlg.jpg">
+                        <img class="sp-thumbnail" src="img/spectre_ver6_xxlg.jpg">
+                        <img class="sp-thumbnail" src="img/pan_ver7_xxlg.jpg">
+                        <img class="sp-thumbnail" src="img/hunger_games_mockingjay__part_two_ver19_xxlg.jpg">
+                        <img class="sp-thumbnail" src="img/manglehorn_ver4_xxlg.jpg">
+                        <img class="sp-thumbnail" src="img/we_are_your_friends_ver3_xxlg.jpg">
+                        <img class="sp-thumbnail" src="img/foxcatcher_ver9_xxlg.jpg">
+                        <img class="sp-thumbnail" src="img/spectre_ver6_xxlg.jpg">
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="typemovie">
+                <p><span class="gray-line">&#124;</span>動作類
+                    <!-- <a href="type-of-movie.html">&gt;</a> -->
+                </p>
+
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="movie-info.html"><img src="img/it_chapter_two_ver13_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="1200">
+                                    <h1>&#124;</h1>
+                                    <h2>牠：第二章</h2>
+                                    <h3>類型：動作、驚悚</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img
+                                    src="img/john_wick_chapter_three_ver15_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="1400">
+                                    <h1>&#124;</h1>
+                                    <h2>捍衛任務3</h2>
+                                    <h3>類型：動作、冒險</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img
+                                    src="img/last_full_measure_ver2_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="1600">
+                                    <h1>&#124;</h1>
+                                    <h2>鋼鐵勳章</h2>
+                                    <h3>類型：動作、歷史</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/artemis_fowl_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="1800">
+                                    <h1>&#124;</h1>
+                                    <h2>阿特米斯<br>奇幻歷險</h2>
+                                    <h3>類型：動作、奇幻</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/ford_v_ferrari_ver3_opt.jpg"
+                                    alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2000">
+                                    <h1>&#124;</h1>
+                                    <h2>賽道狂人</h2>
+                                    <h3>類型：動作、喜劇</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img
+                                    src="img/bad_boys_for_life_ver2_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2200">
+                                    <h1>&#124;</h1>
+                                    <h2>絕地戰警3</h2>
+                                    <h3>類型：動作、喜劇</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/aeronauts_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2400">
+                                    <h1>&#124;</h1>
+                                    <h2>熱氣球<br>飛行家</h2>
+                                    <h3>類型：動作、冒險</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/marriage_story_ver2_opt.jpg"
+                                    alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2600">
+                                    <h1>&#124;</h1>
+                                    <h2>婚姻故事</h2>
+                                    <h3>類型：愛情、溫馨</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+            </section>
+
+            <section class="typemovie">
+                <p><span class="gray-line">&#124;</span>科幻類
+                    <!-- <a href="type-of-movie.html">&gt;</a> -->
+                </p>
+
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="movie-info.html"><img src="img/flower_xlg_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="1200">
+                                    <h1>&#124;</h1>
+                                    <h2>花少女</h2>
+                                    <h3>類型：劇情</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/call_of_the_wild_xlg_opt.jpg"
+                                    alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="1400">
+                                    <h1>&#124;</h1>
+                                    <h2>絕境長征</h2>
+                                    <h3>類型：動作、劇情</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/nomads_ver2_xlg_opt.jpg"
+                                    alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="1600">
+                                    <h1>&#124;</h1>
+                                    <h2>鋼鐵勳章</h2>
+                                    <h3>類型：動作、歷史</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/black_and_blue_xlg_opt.jpg"
+                                    alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="1800">
+                                    <h1>&#124;</h1>
+                                    <h2>黑與藍</h2>
+                                    <h3>類型：動作、驚悚</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/cats_ver4_xlg_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2000">
+                                    <h1>&#124;</h1>
+                                    <h2>貓</h2>
+                                    <h3>類型：動作、喜劇</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img
+                                    src="img/whered_you_go_bernadette_ver4_xlg_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2200">
+                                    <h1>&#124;</h1>
+                                    <h2>囧媽的<br>極地任務</h2>
+                                    <h3>類型：動作、喜劇</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/aeronauts_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2400">
+                                    <h1>&#124;</h1>
+                                    <h2>熱氣球<br>飛行家</h2>
+                                    <h3>類型：動作、冒險</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/marriage_story_ver2_opt.jpg"
+                                    alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2600">
+                                    <h1>&#124;</h1>
+                                    <h2>婚姻故事</h2>
+                                    <h3>類型：愛情、溫馨</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+            </section>
+
+            <section class="typemovie">
+                <p><span class="gray-line">&#124;</span>劇情類
+                    <!-- <a href="type-of-movie.html">&gt;</a> -->
+                </p>
+
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/marriage_story_ver2_opt.jpg"
+                                    alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2600">
+                                    <h1>&#124;</h1>
+                                    <h2>婚姻故事</h2>
+                                    <h3>類型：愛情、溫馨</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img
+                            src="img/whered_you_go_bernadette_ver4_xlg_opt.jpg" alt="">
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                            data-aos-once="false" data-aos-delay="2200">
+                            <h1>&#124;</h1>
+                            <h2>囧媽的<br>極地任務</h2>
+                            <h3>類型：動作、喜劇</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </a>
+                </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img
+                                    src="img/last_full_measure_ver2_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="1600">
+                                    <h1>&#124;</h1>
+                                    <h2>鋼鐵勳章</h2>
+                                    <h3>類型：動作、歷史</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/call_of_the_wild_xlg_opt.jpg"
+                            alt="">
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                            data-aos-once="false" data-aos-delay="1400">
+                            <h1>&#124;</h1>
+                            <h2>絕境長征</h2>
+                            <h3>類型：動作、劇情</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </a>
+                </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/ford_v_ferrari_ver3_opt.jpg"
+                                    alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2000">
+                                    <h1>&#124;</h1>
+                                    <h2>賽道狂人</h2>
+                                    <h3>類型：動作、喜劇</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img
+                                    src="img/bad_boys_for_life_ver2_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2200">
+                                    <h1>&#124;</h1>
+                                    <h2>絕地戰警3</h2>
+                                    <h3>類型：動作、喜劇</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/aeronauts_opt.jpg" alt="">
+                                <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                                    data-aos-once="false" data-aos-delay="2400">
+                                    <h1>&#124;</h1>
+                                    <h2>熱氣球<br>飛行家</h2>
+                                    <h3>類型：動作、冒險</h3>
+                                    <h3>分級：16＋</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a href="movie-info.html"><img src="img/nomads_ver2_xlg_opt.jpg"
+                            alt="">
+                        <div class="new-movie-infor" data-aos="fade-down" data-aos-duration="1500"
+                            data-aos-once="false" data-aos-delay="1600">
+                            <h1>&#124;</h1>
+                            <h2>鋼鐵勳章</h2>
+                            <h3>類型：動作、歷史</h3>
+                            <h3>分級：16＋</h3>
+                        </div>
+                    </a>
+                </div>
+                    </div>
+
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="secondaryinfor">
+
+            <div class="upper-infor">
+                <div class="showbox_logo">
+                    <!--頁尾資訊-->
+                    <a href="index.html"><img src="img/showbox1.png" alt=""></a>
+                </div>
+
+                <div class="copyright">
+                    <p>©2019-2020 copyright All Rights Reserved</p>
+                </div>
+
+                <div class="connect_socialmedia">
+                    <a href=""><img src="img/youtube.png" alt=""></a>
+                    <a href=""><img src="img/twitter.png" alt=""></a>
+                    <a href=""><img src="img/fb.png" alt=""></a>
+                    <a href=""><img src="img/ig.png" alt=""></a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        function show_hide() {
+            var login = document.getElementById("container1");
+            var signup = document.getElementById("container2");
+            var copyright = document.getElementById("copyright");
+
+            if (login.style.display === "none") {
+                login.style.display = "block";  //lonin出現
+                document.getElementById("username").value = "";
+                document.getElementById("password").value = "";
+                signup.style.display = "none";  //signup消失
+                copyright.style.margin = "200px 0px 0px 0px";
+            } else {
+                login.style.display = "none";   //login消失
+                signup.style.display = "block"; //signup出現
+                signup.style.visibility = "visible";
+                copyright.style.margin = "200px 0px 0px 0px";
+
+                document.getElementById("fullname").value = "";
+                document.getElementById("username2").value = "";
+                document.getElementById("password2").value = "";
+                document.getElementById("comfirm_password").value = "";
+            }
+        }
+    </script>
+
+
+    <Script>    // hamburger icon 的切換
+        $(function () {
+
+
+            $("button.hamburger").on("click", function () {
+                $(this).toggleClass("is-active");
+            });
+
+        });
+    </Script>
+
+
+
+    <script> //APP下拉選單
+        function btn() {
+            var btn = document.getElementById("btn");
+            var nav = document.getElementById("nav")
+            if (btn.classList.contains("is-active")) {
+                nav.style.display = "block";
+                TweenMax.staggerTo('.app-navigation', 0.5, { x: 0, opacity: 1, ease: Sine.easeOut, }, 0.2)
+
+            }
+            else {
+                TweenMax.staggerTo('.app-navigation', 0.5, { x: 0, opacity: 0, ease: Sine.easeOut, }, 0.2)
+                setTimeout(function () {
+                    nav.style.display = "none";
+                }, 500)
+            }
+
+        }
+
+
+
+        function init() {
+            document.getElementById("btn").onclick = btn;
+        }
+
+        window.onload = init;
+    </script>
+
+    <script type="text/javascript" src="slider-pro-master/dist/js/jquery.sliderPro.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $('#example3').sliderPro({
+                width: '100%',
+                height: 600,
+                arrows: true,
+                buttons: false,
+                fullScreen: true,
+                smallSize: 500,
+                mediumSize: 1000,
+                largeSize: 3000,
+                thumbnailArrows: true,
+                autoplay: true,
+                autoplayDelay: 5000,
+                autoplayOnHover: false,
+                slideAnimationDuration: 3000,
+                loop: true,
+                orientation: 'vertical',
+                aspectRatio: 3.2,
+            });
+        });
+    </script>
+
+
+
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 8,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            autoplay: {
+                delay: 5000,
+            },
+            speed: 1000,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplayDisableOnInteraction: true,
+            touchRatio: 3,
+            allowTouchMove: true,
+            shortSwipes: true,
+            breakpoints: {
+                1750: {
+                    slidesPerView: 8,
+
+                },
+                1450: {
+                    slidesPerView: 7,
+
+                },
+                1200: {
+                    slidesPerView: 6,
+
+                },
+
+                1024: {
+                    slidesPerView: 5,
+
+                },
+                768: {
+                    slidesPerView: 4,
+
+                },
+                640: {
+                    slidesPerView: 3,
+
+                },
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                }
+
+            }
+        });
+    </script>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+
+        $(function () {
+            AOS.init();
+        })
+
+    </script>
+
+</body>
+
+</html>
